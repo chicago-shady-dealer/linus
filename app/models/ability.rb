@@ -20,9 +20,8 @@ class Ability
       can :manage, :assignments
     elsif editor.has_role? :layout_editor
       can :read, :all
-    else
-      can :read, :ideas
     end
+    can :read, :ideas
   end
     # Define abilities for the passed in user here. For example:
     #
