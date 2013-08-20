@@ -5,20 +5,26 @@ class Ability
     editor ||= Editor.new
     if editor.has_role? :super_admin
       can :manage, :all
-    elsif editor.has_role? :editor_in_chief
+    end
+    if editor.has_role? :editor_in_chief
       can :manage, :all
-    elsif editor.has_role? :managing_editor
+    end
+    if editor.has_role? :managing_editor
       can :read, :all
       can :write, :issue
-    elsif editor.has_role? :head_copy_editor
+    end
+    if editor.has_role? :head_copy_editor
       can :manage, :submissions
       can :read, :ideas
-    elsif editor.has_role? :copy_editor
+    end
+    if editor.has_role? :copy_editor
       can :write, :submissions
-    elsif editor.has_role? :secretary
+    end
+    if editor.has_role? :secretary
       can :manage, :ideas
       can :manage, :assignments
-    elsif editor.has_role? :layout_editor
+    end
+    if editor.has_role? :layout_editor
       can :read, :all
     end
     can :read, :ideas
