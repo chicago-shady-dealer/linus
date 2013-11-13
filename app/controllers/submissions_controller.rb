@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
   before_filter :authenticate_editor!
+  load_and_authorize_resource
 
   def current_user
     current_editor
@@ -9,16 +10,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions.json
   def index
     i = params[:issue_id]
-    @issue =
-      if i.nil?
-        if Issue.next_issue.present? 
-            Issue.next_issue
-        else
-            Issue.last_issue
-        end
-      else
-        Issue.find i
-      end
+    @issue = Issue.choose_issue(i)
     @submissions = Submission.where("issue_id = ?", @issue)
 
     respond_to do |format|
@@ -48,7 +40,7 @@ class SubmissionsController < ApplicationController
       @submission.headline = assignment.idea.headline
       @submission.writer = Writer.find(assignment.writer)
       @submission.assignment = assignment
-      @submission.issue = Issue.next_issue
+      @submission.issue = Issue.choose_issue(nil)
     end
 
     respond_to do |format|
@@ -66,7 +58,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(params[:submission])
-    @submission.issue = Issue.next_issue
+    @submission.issue = Issue.choose_issue(nil)
     @image = @submission.image
 
     if @submission.save

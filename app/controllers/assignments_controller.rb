@@ -1,16 +1,12 @@
 class AssignmentsController < ApplicationController
   before_filter :authenticate_editor!
+  load_and_authorize_resource
 
   # GET /assignments
   # GET /assignments.json
   def index
     i = params[:issue_id]
-    @issue =
-      if i.nil?
-        Issue.next_issue
-      else
-        Issue.find i
-      end
+    @issue = Issue.choose_issue(i)
 
     w = params[:writer]
     @assignments =
