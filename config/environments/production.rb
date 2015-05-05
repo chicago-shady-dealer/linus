@@ -20,7 +20,7 @@ Linus::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  # Defaults to Rails.root.join("public/assets")
+  # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
   # Specifies the header that your server uses for sending files
@@ -47,8 +47,6 @@ Linus::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-  #config.assets.precompile += %w( *.js )
-  #config.assets.precompile += %w( *.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -66,15 +64,4 @@ Linus::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  
-  config.action_mailer.default_url_options = { :host => 'linus.chicagoshadydealer.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'chicagoshadydealer.com',
-    :user_name            => CONFIG["mail"]["user"],
-    :password             => CONFIG["mail"]["password"],
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
 end

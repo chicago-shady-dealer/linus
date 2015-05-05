@@ -3,31 +3,32 @@ class Ability
 
   def initialize(editor)
     editor ||= Editor.new
-    if editor.has_role? :super_admin
-      can :manage, :all
-    end
-    if editor.has_role? :editor_in_chief
-      can :manage, :all
-    end
-    if editor.has_role? :managing_editor
-      can :read, :all
-      can :write, Issue
-    end
-    if editor.has_role? :head_copy_editor
-      can :manage, Submission
-      can :read, Idea
-    end
-    if editor.has_role? :copy_editor
-      can :manage, Submission
-    end
-    if editor.has_role? :secretary
-      can :manage, Idea
-      can :manage, Assignment
-    end
-    if editor.has_role? :layout_editor
-      can :read, :all
-    end
-    can :read, Idea
+    can :manage, :all
+    # if editor.has_role? :super_admin
+    #   can :manage, :all
+    # end
+    # if editor.has_role? :editor_in_chief
+    #   can :manage, :all
+    # end
+    # if editor.has_role? :managing_editor
+    #   can :read, :all
+    #   can :write, Issue
+    # end
+    # if editor.has_role? :head_copy_editor
+    #   can :manage, Submission
+    #   can :read, Idea
+    # end
+    # if editor.has_role? :copy_editor
+    #   can :manage, Submission
+    # end
+    # if editor.has_role? :secretary
+    #   can :manage, Idea
+    #   can :manage, Assignment
+    # end
+    # if editor.has_role? :layout_editor
+    #   can :read, :all
+    # end
+    # can :read, Idea
   end
     # Define abilities for the passed in user here. For example:
     #

@@ -54,6 +54,7 @@ group :development, :test do
   gem 'capistrano-unicorn'
   gem 'sqlite3'
   gem 'rake'
+  gem 'test-unit'
 
   #gem 'webrat'
   gem 'rspec'

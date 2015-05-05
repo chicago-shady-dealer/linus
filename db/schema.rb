@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(:version => 20130313210116) do
     t.string   "imageable_type"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-    t.string   "cropy"
     t.integer  "writer_id"
     t.string   "credit"
   end
