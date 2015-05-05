@@ -6,7 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'
-gem 'mysql2'
+# gem 'mysql2'
 gem 'pg'
 
 gem 'devise'
@@ -72,5 +72,5 @@ group :development, :test do
   gem 'annotate'
   #gem 'rails3-generators'
   gem 'turn', :require => false
-  gem 'debugger'
+  # gem 'debugger'
 end
