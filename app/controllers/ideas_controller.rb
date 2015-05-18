@@ -82,7 +82,7 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(params[:idea].slice(:headline, :issue_id))
-    @idea.issue = Issue.choose_issue(nil)
+    @idea.issue ||= Issue.choose_issue(nil)
 
     respond_to do |format|
       if @idea.save
