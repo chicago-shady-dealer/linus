@@ -26,7 +26,7 @@ class Linus.Views.Ideas.NewView extends Backbone.View
     headline = @$("#new-idea #headline").val()
     if headline
       @$("input#headline").val ''
-      @collection.create(headline: headline)
+      @collection.create(headline: headline, issue_id: $("#issue_id").val())
 
   render: ->
     $(@el).html(@template(@model.toJSON() ))
