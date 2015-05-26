@@ -58,7 +58,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions.json
   def create
     @submission = Submission.new(params[:submission])
-    @submission.issue = Issue.choose_issue(nil)
+    @submission.issue ||= Issue.choose_issue(nil)
     @image = @submission.image
 
     if @submission.save
