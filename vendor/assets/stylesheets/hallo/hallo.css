@@ -109,3 +109,8 @@ button.blockselector, button.blockselector:focus{
     border-radius: 10px;
     cursor: none;
 }
+
+.icon-bold
+{
+background: #0000FF;
+}
