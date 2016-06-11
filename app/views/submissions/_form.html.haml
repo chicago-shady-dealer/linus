@@ -1,3 +1,81 @@
+:css
+  
+		.ui-button 
+        {
+            cursor: pointer;
+            display: inline-block;
+            background-color: #e6e6e6;
+            background-repeat: no-repeat;
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(25%, #fff), to(#e6e6e6));
+            background-image: -webkit-linear-gradient(#fff, #fff 25%, #e6e6e6);
+            background-image: -moz-linear-gradient(top, #fff, #fff 25%, #e6e6e6);
+            background-image: -ms-linear-gradient(#fff, #fff 25%, #e6e6e6);
+            background-image: -o-linear-gradient(#fff, #fff 25%, #e6e6e6);
+            background-image: linear-gradient(#fff, #fff 25%, #e6e6e6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+            padding: 16px 16px 16px;
+            margin: 0;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+            color: #333;
+            font-size: 13px;
+            line-height: normal;
+            border: 1px solid #ccc;
+            border-bottom-color: #bbb;
+            -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+            -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+            -webkit-transition: 0.1s linear background-image;
+            -moz-transition: 0.1s linear background-image;
+            -ms-transition: 0.1s linear background-image;
+            -o-transition: 0.1s linear background-image;
+            transition: 0.1s linear background-image;
+            overflow: visible;
+        }
+
+        .ui-state-hover
+        {
+            background-position: 0 0px;
+            background-color: #333;
+            text-decoration: none;
+        }
+		
+        .bold_button
+        {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c0/Farm-Fresh_text_bold.png);
+        }
+
+        .italic_button
+        {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/cf/Farm-Fresh_text_italic.png);
+        }
+
+        .justifyLeft_button
+        {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6c/Farm-Fresh_text_align_left.png);
+        }
+
+        .justifyRight_button
+        {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/17/Farm-Fresh_text_align_right.png);
+        }
+
+        .justifyCenter_button
+        {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e0/Farm-Fresh_text_align_center.png);
+        }
+
+        .insertOrderedList_button
+        {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/eb/TTC_line_one.png);
+        }
+
+        .insertUnorderedList_button
+        {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/36/Map-icon-circle-black.png);
+        }
+        
+        
+
 #submit_form
   = nested_form_for @submission do |f|
     - if @submission.errors.any?
@@ -65,80 +143,6 @@
         %a{:id => "reject_change"} Reject change
 
 
-  :css
-        .bold_button
-        {
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c0/Farm-Fresh_text_bold.png);
-        }
-
-        .italic_button
-        {
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/cf/Farm-Fresh_text_italic.png);
-        }
-
-        .justifyLeft_button
-        {
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6c/Farm-Fresh_text_align_left.png);
-        }
-
-        .justifyRight_button
-        {
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/17/Farm-Fresh_text_align_right.png);
-        }
-
-        .justifyCenter_button
-        {
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e0/Farm-Fresh_text_align_center.png);
-        }
-
-        .insertOrderedList_button
-        {
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/eb/TTC_line_one.png);
-        }
-
-        .insertUnorderedList_button
-        {
-            background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/36/Map-icon-circle-black.png);
-        }
-        
-        .ui-button 
-        {
-            cursor: pointer;
-            display: inline-block;
-            background-color: #e6e6e6;
-            background-repeat: no-repeat;
-            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(25%, #fff), to(#e6e6e6));
-            background-image: -webkit-linear-gradient(#fff, #fff 25%, #e6e6e6);
-            background-image: -moz-linear-gradient(top, #fff, #fff 25%, #e6e6e6);
-            background-image: -ms-linear-gradient(#fff, #fff 25%, #e6e6e6);
-            background-image: -o-linear-gradient(#fff, #fff 25%, #e6e6e6);
-            background-image: linear-gradient(#fff, #fff 25%, #e6e6e6);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-            padding: 16px 16px 16px;
-            margin: 0;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.75);
-            color: #333;
-            font-size: 13px;
-            line-height: normal;
-            border: 1px solid #ccc;
-            border-bottom-color: #bbb;
-            -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
-            -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
-            -webkit-transition: 0.1s linear background-image;
-            -moz-transition: 0.1s linear background-image;
-            -ms-transition: 0.1s linear background-image;
-            -o-transition: 0.1s linear background-image;
-            transition: 0.1s linear background-image;
-            overflow: visible;
-        }
-
-        .ui-state-hover
-        {
-            background-position: 0 0px;
-            background-color: #333;
-            text-decoration: none;
-        }
         
   :javascript
     $(function() {
