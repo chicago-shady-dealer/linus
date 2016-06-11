@@ -65,41 +65,7 @@
         %a{:id => "reject_change"} Reject change
 
 
-  :javascript
-    $(function() {
-        var text = document.getElementById('submission_body_editable');
-        window.tracker = new ice.InlineChangeEditor({
-            element: text,
-            handleEvents: true,
-            plugins : ['IceAddTitlePlugin', 'IceSmartQuotesPlugin', 'IceEmdashPlugin', {
-                name : 'IceCopyPastePlugin',
-                settings : {
-                    pasteType : 'formattedClean',
-                    preserve : 'p,a[href],i,em,b,strong,span[id,class],h1,h2,h3,h4,h5,h6,ul,ol,li'
-                }
-            }]
-        }).startTracking();
-    });
-    jQuery(document).ready(function() {
-      tracker.setCurrentUser({
-        id: "#{current_editor.id}",
-        name: "#{current_editor.name}"
-      });
-      jQuery("#accept_all").mousedown(function() {
-        return tracker.acceptAll();
-      });
-      jQuery("#reject_all").mousedown(function() {
-        return tracker.rejectAll();
-      });
-      jQuery("#accept_change").mousedown(function() {
-        return tracker.acceptChange();
-      });
-      jQuery("#reject_change").mousedown(function() {
-        return tracker.rejectChange();
-      });
-    });
-    -# this is probably very very dumb but i am not a smart programmer...
-    :css
+  :css
         .bold_button
         {
             background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c0/Farm-Fresh_text_bold.png);
@@ -134,3 +100,37 @@
         {
             background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/36/Map-icon-circle-black.png);
         }
+		
+  :javascript
+    $(function() {
+        var text = document.getElementById('submission_body_editable');
+        window.tracker = new ice.InlineChangeEditor({
+            element: text,
+            handleEvents: true,
+            plugins : ['IceAddTitlePlugin', 'IceSmartQuotesPlugin', 'IceEmdashPlugin', {
+                name : 'IceCopyPastePlugin',
+                settings : {
+                    pasteType : 'formattedClean',
+                    preserve : 'p,a[href],i,em,b,strong,span[id,class],h1,h2,h3,h4,h5,h6,ul,ol,li'
+                }
+            }]
+        }).startTracking();
+    });
+    jQuery(document).ready(function() {
+      tracker.setCurrentUser({
+        id: "#{current_editor.id}",
+        name: "#{current_editor.name}"
+      });
+      jQuery("#accept_all").mousedown(function() {
+        return tracker.acceptAll();
+      });
+      jQuery("#reject_all").mousedown(function() {
+        return tracker.rejectAll();
+      });
+      jQuery("#accept_change").mousedown(function() {
+        return tracker.acceptChange();
+      });
+      jQuery("#reject_change").mousedown(function() {
+        return tracker.rejectChange();
+      });
+    });
